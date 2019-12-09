@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParidoLiberalAPI", "ParidoLiberalAPI\ParidoLiberalAPI.csproj", "{4D077F98-0AE6-459F-80B4-5826970944A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartidoLiberalWeb", "PartidoLiberalWeb\PartidoLiberalWeb.csproj", "{8F8BE3E2-3D87-4876-8610-B11B729BE29A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D077F98-0AE6-459F-80B4-5826970944A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D077F98-0AE6-459F-80B4-5826970944A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D077F98-0AE6-459F-80B4-5826970944A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D077F98-0AE6-459F-80B4-5826970944A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F8BE3E2-3D87-4876-8610-B11B729BE29A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F8BE3E2-3D87-4876-8610-B11B729BE29A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F8BE3E2-3D87-4876-8610-B11B729BE29A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F8BE3E2-3D87-4876-8610-B11B729BE29A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B9304E77-7115-441A-BD75-392DABDA4C21}
+	EndGlobalSection
+EndGlobal

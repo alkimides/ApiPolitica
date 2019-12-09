@@ -1,0 +1,56 @@
+﻿@page
+@model PartidoLiberalWeb.Pages.PersonaModel
+@{
+    ViewData["Title"] = "PartidoLiberal";
+}
+
+<h2>PartidoLiberal</h2>
+
+<!DOCTYPE html>
+
+<html>
+<body>
+
+    <div class="container">
+
+        <!--Creamos tabla para la web-->
+        <table id="tablapartidos" class="table" cellpadding="0" cellspacing="0">
+
+            <thead>
+                
+                <tr>
+                    <!--cabezera tabla-->
+                    <th style="width:150px">Nombre</th>
+                    <th style="width:150px">Apellidos</th>
+                    <th style="width:150px">Telefono</th>
+                    <th style="width:150px">Edad</th>
+                    <th style="width:150px">Categoria</th>
+                    <th><input type="button" id="btnDelete" value="Remove" onclick="" /></th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+                @foreach (var partidos in Model.Persona)
+                { 
+                    <tr>
+                        <td>@partidos.Nombre</td>
+                        <td>@partidos.Apellidos</td>
+                        <td>@partidos.Telefono</td>
+                        <td>@partidos.Edad</td>
+                        <td>@partidos.idCategoria</td>
+                        <td></td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                </tr>
+            </tfoot>
+
+        </table>
+    </div>
+
+</body>
+</html>
