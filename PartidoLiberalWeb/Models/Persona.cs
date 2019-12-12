@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace PartidoLiberalWeb.Models
 {
-    public class Persona
+    public partial class Persona
     {
         public int idPersona { get; set; }
         public Nullable<int> idCategoria { get; set; }

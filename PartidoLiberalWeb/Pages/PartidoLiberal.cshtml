@@ -17,7 +17,7 @@
         <table id="tablapartidos" class="table" cellpadding="0" cellspacing="0">
 
             <thead>
-                
+
                 <tr>
                     <!--cabezera tabla-->
                     <th style="width:150px">Nombre</th>
@@ -25,32 +25,93 @@
                     <th style="width:150px">Telefono</th>
                     <th style="width:150px">Edad</th>
                     <th style="width:150px">Categoria</th>
-                    <th><input type="button" id="btnDelete" value="Remove" onclick="" /></th>
+                    <th></th>
                 </tr>
 
             </thead>
-
+            <!--Tabla para mostrar los datos de SQL-->
             <tbody>
-                @foreach (var partidos in Model.Persona)
-                { 
+                @foreach (var p in Model.Persona)                 
+                {
                     <tr>
-                        <td>@partidos.Nombre</td>
-                        <td>@partidos.Apellidos</td>
-                        <td>@partidos.Telefono</td>
-                        <td>@partidos.Edad</td>
-                        <td>@partidos.idCategoria</td>
+                        
+                        <td>@p.Nombre</td>
+                        <td>@p.Apellidos</td>
+                        <td>@p.Telefono</td>
+                        <td>@p.Edad</td>
+                        <td>@p.idCategoria</td>
+                        <td><input type="submit" id="btnDelete" value="Delete"/></td>
                         <td></td>
                     </tr>
                 }
             </tbody>
-            <tfoot>
-                <tr>
-                    <td></td>
-                </tr>
-            </tfoot>
+
 
         </table>
+        <!--form del post-->
+        <form method="post">
+            Nombre: <input type="text" asp-for="Nombre" /><br /><br />
+            Apellidos: <input type="text" asp-for="Apellidos" /> <br /><br />
+            Telefono: <input type="text" asp-for="Telefono" /><br /><br />
+            Edad: <input type="text" asp-for="Edad" /><br /><br />
+            Categoria: <input type="text" asp-for="idCategoria" /><br /><br />
+            <input type="submit" value="Enviar" />
+        </form>
+
+        @*<form method="delete">
+            Inserte ID: <input type="text" asp-for="idPersona" /><br />
+            <input type="submit" value="delete" />
+        </form>*@
+
+
+        <!--Como no he conseguido que el delete funcione con RAZOR, lo he hecho con javascript-->
+
+        
+
+        <br />
+        <br />
+        
+
+        <h4>Delete</h4>
+
+        <input type="text" placeholder="insert id here" id="idfinder" /><input type="button" id="btnDelete" />
+
     </div>
+
+    <script type="text/javascript">
+        //linkeamos la funcion delete al boton del html
+        document.querySelector('#btnDelete').addEventListener('click', function(){
+            deleteWorker();
+        });
+
+      function deleteWorker(value){
+        var data = null;
+
+        var api = new XMLHttpRequest();
+        api.withCredentials=false;
+
+        api.addEventListener("readystatechange", function () {
+            if(this.readyState == 4){
+                 console.log(this.responseText);
+                let datos = JSON.parse(this.responseText);
+            }
+            for (let item of datos){
+                if(item.PersonId == idfinder.value){
+                     value = item.idPersona;
+                }
+            }
+         });
+    
+
+        api.open("DELETE", `https://localhost:44320/api/Personas/${value}`);
+        api.setRequestHeader("content-type", "application/json");
+        api.setRequestHeader("cache-control", "no-cache");
+
+        api.send(data);
+    }
+
+
+    </script>
 
 </body>
 </html>
